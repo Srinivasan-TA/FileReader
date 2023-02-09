@@ -5,7 +5,8 @@ import java.util.logging.Logger;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String fileName = "C:\\Users\\Tringapps-user19\\Downloads\\sample.txt";
+        String se ="C:\\Users\\Tringapps-user19\\Downloads\\sample.txt";
+        String fileName = se;
         HashMap<String, Integer> newkey = new HashMap<>();
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line;
