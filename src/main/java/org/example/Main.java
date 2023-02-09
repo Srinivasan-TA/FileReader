@@ -1,6 +1,7 @@
 package org.example;
 import java.io.*;
 import java.util.*;
+import java.util.logging.Logger;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -22,14 +23,13 @@ public class Main {
         }
         Map<String, Integer> sortedWordCounts = sortByValue(newkey);
        for (Map.Entry<String, Integer> entry : sortedWordCounts.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
+           Logger l = Logger.getLogger("com.api.jar");
+           l.info(entry.getKey() + ": " + entry.getValue());
         }
     }
     private static Map<String, Integer> sortByValue(Map<String, Integer> newkey) {
         List<Map.Entry<String, Integer>> list = new LinkedList<>(newkey.entrySet());
         list.sort((o1, o2) -> (o2.getValue()).compareTo(o1.getValue()));
-//        System.out.println("-----------"+list);
-
         Map<String, Integer> words = new LinkedHashMap<>();
         for (Map.Entry<String, Integer> entry : list) {
             words.put(entry.getKey(), entry.getValue());
